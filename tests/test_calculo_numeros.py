@@ -20,6 +20,8 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='-100'
     )
+
+    # Test para ingreso de numeros negativos debe retornar una expecion
     def test_ingreso_negativo(self, patch_input):
         with self.assertRaises(NumeroDebeSerPositivo):
             ingrese_numero()

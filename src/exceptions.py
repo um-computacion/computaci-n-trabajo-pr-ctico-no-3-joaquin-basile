@@ -21,4 +21,5 @@ def ingrese_numero():
             pass
         # return numero
     except ValueError:
-        raise ValueError("La entrada debe ser un número válido") 
+        #raise ValueError("La entrada debe ser un número válido") 
+        pass
