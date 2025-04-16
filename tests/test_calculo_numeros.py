@@ -11,7 +11,8 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='100'
     )
-    def test_ingreso_feliz(self, patch_input):
+    # Test del ingreso valido debe retornar el numero
+    def test_ingreso_valido(self, patch_input):
         numero = ingrese_numero()
         self.assertEqual(numero, 100)
 
@@ -19,6 +20,8 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='-100'
     )
+
+    # Test para ingreso de numeros negativos debe retornar una expecion
     def test_ingreso_negativo(self, patch_input):
         with self.assertRaises(NumeroDebeSerPositivo):
             ingrese_numero()
@@ -27,7 +30,8 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='AAA'
     )
-    def test_ingreso_letras(self, patch_input):
+    # Test para ingresos no numericos debe retornar una exepcion
+    def test_ingreso_no_numerico(self, patch_input):
         with self.assertRaises(ValueError):
             ingrese_numero()
 
