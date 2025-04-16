@@ -28,7 +28,8 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='AAA'
     )
-    def test_ingreso_letras(self, patch_input):
+    # Test para ingresos no numericos debe retornar una exepcion
+    def test_ingreso_no_numerico(self, patch_input):
         with self.assertRaises(ValueError):
             ingrese_numero()
 
