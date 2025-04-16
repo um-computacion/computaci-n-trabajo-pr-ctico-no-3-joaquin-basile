@@ -11,7 +11,8 @@ class TestCalculoNumeros(unittest.TestCase):
         'builtins.input',
         return_value='100'
     )
-    def test_ingreso_feliz(self, patch_input):
+    # Test del ingreso valido debe retornar el numero
+    def test_ingreso_valido(self, patch_input):
         numero = ingrese_numero()
         self.assertEqual(numero, 100)
 
